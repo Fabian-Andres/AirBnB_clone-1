@@ -6,8 +6,11 @@
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
 }
-
 .locations {
+	border-right: 1px solid #DDDDDD;
+}
+.locations,
+.amenities {
 	display: inline;
 	vertical-align: middle;
 	float: left;
@@ -15,7 +18,6 @@
 	width: 25%;
 
 	line-height: 20px;
-	border-right: 1px solid #DDDDDD;
 }
 
 .filter_amenities {
@@ -40,9 +42,11 @@
 
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
+	max-height: 300px;
+    	overflow: auto;
 }
 
-.locations:hover .popover {
+div:hover > .popover {
 	display: inline-block;
 }
 

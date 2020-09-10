@@ -5,6 +5,7 @@ from models import storage
 from flask import Flask, render_template
 from markupsafe import escape
 from models.state import State
+from models.amenity import Amenity
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -36,7 +37,10 @@ def states_list_route(id):
 
 @app.route('/hbnb_filters/')
 def list_filters():
-    return render_template('10-hbnb_filters.html')
+    states = storage.all(State).values()
+    amenities = storage.all(Amenity).values()
+    return render_template('10-hbnb_filters.html', states=states,
+                           amenities=amenities)
 
 
 if __name__ == "__main__":
